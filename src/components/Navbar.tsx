@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from "@/../../public/shared/logo.svg";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setisOpen] = useState(false);
+  const pathname = usePathname();
   const links = [
     { href: "/", label: "Home", id: "00" },
     { href: "/destination", label: "Destination", id: "01" },
@@ -26,8 +28,11 @@ export default function Navbar() {
   before:content-[''] before:absolute before:right-full before:top-1/2 before:-translate-y-1/2 before:w-full before:h-[0.0625rem] before:bg-white before:opacity-40"
       >
         {links.map((link) => (
-          <li key={link.id}>
-            <Link href={link.href}>
+          <li
+            key={link.id}
+            className={pathname === link.href ? "opacity-50" : "opacity-100"}
+          >
+            <Link href={link.href} className="">
               <span className="font-bold">{link.id}</span> {link.label}
             </Link>
           </li>
