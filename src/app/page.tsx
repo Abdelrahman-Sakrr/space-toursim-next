@@ -4,21 +4,21 @@ import mobileBg from "@/../public/home/background-home-mobile.jpg";
 import Link from "next/link";
 export default function Home() {
   return (
-    <div className="font-sans w-full min-h-screen ">
+    <div className="w-full min-h-screen">
+      <Image
+        src={desktopBg}
+        alt="Home Background"
+        className="lg:absolute lg:inset-0 lg:object-cover lg:w-full lg:h-screen lg:block -z-10 hidden"
+        fill
+      />
+      <Image
+        src={mobileBg}
+        alt="Home Background"
+        className="absolute inset-0 object-cover w-full h-screen -z-10 lg:hidden"
+        fill
+      />
       <main className="flex flex-col row-start-2 items-center sm:items-start lg:h-screen w-full">
-        <Image
-          src={desktopBg}
-          alt="Home Background"
-          className="lg:absolute lg:inset-0 lg:object-cover lg:w-full lg:h-screen lg:block -z-10 hidden"
-          fill
-        />
-        <Image
-          src={mobileBg}
-          alt="Home Background"
-          className="absolute inset-0 object-cover w-full h-screen -z-10 lg:hidden"
-          fill
-        />
-        <div className=" z-10 lg:p-8 flex flex-col lg:flex-row justify-around gap-20 items-center text-white lg:flex lg:justify-evenly  lg:items-end lg:absolute lg:bottom-10">
+        <div className=" lg:p-8 pt-24 flex flex-col lg:flex-row justify-around gap-20 items-center text-white lg:flex lg:justify-evenly  lg:items-end lg:absolute lg:bottom-10">
           <div className="lg:w-1/2 w-full flex flex-col text-center lg:text-start justify-center items-center lg:items-start lg:justify-start lg:mt-20 mt-10">
             <p className="font-barlow mb-5 text-4xl">So You Want To Trav</p>
             <h4 className="lg:my-10 my-5 lg:text-9xl text-7xl font-bellefair uppercase font-bold">
