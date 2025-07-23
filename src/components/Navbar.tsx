@@ -15,7 +15,7 @@ export default function Navbar() {
     { href: "/technology", label: "Technology", id: "03" },
   ];
   return (
-    <nav className="flex items-center absolute  top-1 tracking-widest    font-barlow right-0 left-0 lg:justify-around justify-between px-10 lg:px-5 p-4 text-white mt-5">
+    <nav className="flex items-center z-50 absolute  top-1 tracking-widest    font-barlow right-0 left-0 lg:justify-around justify-between px-10 lg:px-5 p-4 text-white mt-5">
       <Image
         src={logo}
         alt="logo image"
