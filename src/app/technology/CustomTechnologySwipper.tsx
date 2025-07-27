@@ -43,7 +43,7 @@ export default function CustomTechnologySwipper() {
   };
 
   return (
-    <div className="w-full flex flex-col lg:flex-row justify-center items-center">
+    <div className="w-full flex flex-col lg:flex-row lg:items-start h-full justify-center items-center">
       <div className="flex lg:flex-col flex-row gap-7 justify-center items-center mb-10 lg:mb-0 lg:me-6">
         {crew.map((_, index) => (
           <button
@@ -53,14 +53,14 @@ export default function CustomTechnologySwipper() {
               currentIndex === index
                 ? "bg-white text-black"
                 : "bg-transparent border-2 text-white"
-            } font-bold py-4 px-6 rounded-full cursor-pointer transition-all duration-300`}
+            } text-xl py-4 px-6 rounded-full cursor-pointer transition-all duration-300 font-barlow`}
           >
             {index + 1}
           </button>
         ))}
       </div>
       <Swiper
-        modules={[Pagination, Autoplay]}
+        modules={[Autoplay, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         autoplay
@@ -85,7 +85,7 @@ export default function CustomTechnologySwipper() {
                   {member.description}
                 </p>
               </div>
-              <div className=" relative lg:w-[50%] xl:w-[30%] w-full p-5">
+              <div className="relative lg:w-[40%] xl:w-[30%] w-full p-5">
                 <Image
                   src={member.image}
                   alt={member.name}

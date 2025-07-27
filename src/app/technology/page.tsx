@@ -6,7 +6,7 @@ import CustomTechnologySwipper from "./CustomTechnologySwipper";
 
 export default function page() {
   return (
-    <section className="font-sans w-full min-h-screen">
+    <section className="font-sans w-full min-h-screen lg:overflow-hidden">
       <div className="pt-36 lg:h-screen w-full relative flex flex-wrap justify-center items-center">
         <Image
           src={desktopBg}
