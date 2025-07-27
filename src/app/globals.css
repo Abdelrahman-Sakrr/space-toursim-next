@@ -10,7 +10,13 @@
   --font-barlow: var(--font-barlow);
   --font-bellefair: var(--font-bellefair);
 }
-
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 50%;
+}
 @keyframes fade-in-scale {
   from {
     opacity: 0;
