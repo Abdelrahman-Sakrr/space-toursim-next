@@ -63,10 +63,7 @@ export default function CustomTechnologySwipper() {
         modules={[Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        autoplay
         loop={true}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -76,7 +73,7 @@ export default function CustomTechnologySwipper() {
       >
         {crew.map((member) => (
           <SwiperSlide key={member.name}>
-            <div className="text-center lg:ps-8 flex  flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between w-full">
+            <div className="text-center flex  flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-evenly w-full">
               <div className="flex flex-col text-white lg:w-1/2 w-full text-center lg:text-start justify-center items-center lg:items-start lg:justify-start lg:px-6">
                 <p className="uppercase text-2xl text-[#D0D6F9] font-barlow">
                   THE TERMINOLOGY…
