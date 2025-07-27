@@ -20,7 +20,7 @@ export default function page() {
           className="absolute inset-0 object-cover w-full h-screen -z-10 lg:hidden"
           fill
         />
-        <div className="md:w-2/3 w-11/12 flex flex-col md:items-start md:justify-start items-center justify-center">
+        <div className="md:w-8/12 w-11/12 flex flex-col md:items-start md:justify-start items-center justify-center">
           <p className="text-white px-6 font-barlow tracking-widest uppercase text-3xl mb-20">
             <span className="opacity-50">03</span> space launch 101
           </p>

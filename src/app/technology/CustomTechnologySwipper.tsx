@@ -3,8 +3,9 @@ import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import vehicle from "@/../public/technology/image-launch-vehicle-landscape.jpg";
-import capsule from "@/../public/technology/image-space-capsule-landscape.jpg";
+import vehicle from "@/../public/technology/image-launch-vehicle-portrait.jpg";
+import capsule from "@/../public/technology/image-space-capsule-portrait.jpg";
+import capsule2 from "@/../public/technology/image-spaceport-portrait.jpg";
 import Image from "next/image";
 import { Swiper as SwiperType } from "swiper";
 
@@ -25,7 +26,7 @@ const crew = [
     name: "Spaceport",
     description:
       "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth's rotation for launch.",
-    image: capsule,
+    image: capsule2,
   },
 ];
 
@@ -75,7 +76,7 @@ export default function CustomTechnologySwipper() {
       >
         {crew.map((member) => (
           <SwiperSlide key={member.name}>
-            <div className="text-center lg:ps-8 flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between w-full">
+            <div className="text-center lg:ps-8 flex  flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between w-full">
               <div className="flex flex-col text-white lg:w-1/2 w-full text-center lg:text-start justify-center items-center lg:items-start lg:justify-start lg:px-6">
                 <p className="uppercase text-2xl text-[#D0D6F9] font-barlow">
                   THE TERMINOLOGY…
@@ -87,7 +88,7 @@ export default function CustomTechnologySwipper() {
                   {member.description}
                 </p>
               </div>
-              <div className=" relative w-2/3 !h-full">
+              <div className=" relative lg:w-[50%] xl:w-[30%] w-full p-5">
                 <Image
                   src={member.image}
                   alt={member.name}
