@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import vehicle from "@/../public/technology/image-launch-vehicle-portrait.jpg";
 import capsule from "@/../public/technology/image-space-capsule-portrait.jpg";
@@ -51,8 +51,8 @@ export default function CustomTechnologySwipper() {
             onClick={() => handleButtonClick(index)}
             className={`${
               currentIndex === index
-                ? "bg-white text-black"
-                : "bg-transparent border-2 text-white"
+                ? "bg-white ActivePagiantionClass text-black"
+                : "bg-transparent border-2 text-white paginationClass"
             } text-xl py-4 px-6 rounded-full cursor-pointer transition-all duration-300 font-barlow`}
           >
             {index + 1}
@@ -60,20 +60,33 @@ export default function CustomTechnologySwipper() {
         ))}
       </div>
       <Swiper
-        modules={[Autoplay, Pagination]}
+        effect="Cube"
+        modules={[Autoplay, Navigation, Pagination]}
+        navigation
         spaceBetween={0}
+        speed={800}
+        centeredSlides={true}
         slidesPerView={1}
-        autoplay
+        pagination={{
+          bulletActiveClass: "ActivePagiantionClass",
+          bulletClass: "paginationClass",
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: true,
+          waitForTransition: true,
+          pauseOnMouseEnter: true,
+        }}
         loop={true}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
         onSlideChange={handleSlideChange}
-        className="w-full"
+        className="w-full mySwiper"
       >
         {crew.map((member) => (
           <SwiperSlide key={member.name}>
-            <div className="text-center flex  flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-evenly w-full">
+            <div className="text-center flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-evenly w-full h-full lg:min-h-[500px]">
               <div className="flex flex-col text-white lg:w-1/2 w-full text-center lg:text-start justify-center items-center lg:items-start lg:justify-start lg:px-6">
                 <p className="uppercase text-2xl text-[#D0D6F9] font-barlow">
                   THE TERMINOLOGY…
@@ -85,13 +98,13 @@ export default function CustomTechnologySwipper() {
                   {member.description}
                 </p>
               </div>
-              <div className="relative lg:w-[40%] xl:w-[30%] w-full p-5">
+              <div className="relative lg:w-[40%] xl:w-[30%] w-full p-5 lg:p-0">
                 <Image
                   src={member.image}
                   alt={member.name}
                   width={200}
-                  height={800}
-                  className="object-contain w-full h-full"
+                  height={900}
+                  className="!object-cover w-full"
                 />
               </div>
             </div>
